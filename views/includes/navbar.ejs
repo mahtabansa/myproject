@@ -1,0 +1,58 @@
+<style>
+  .nav-search  {
+    display: flex;
+    justify-content:center !important;
+  }
+  .search-input {
+    padding:0.5rem;
+    padding:0.5rem 2rem;
+    border-radius: 1.5rem;
+  }
+#input-search-btn {
+     padding:0rem 3rem;
+     
+}
+#search-btn{
+  border: 1px solid rgb(35, 32, 32) ;
+  color: white;
+ background-color:rgb(255, 33, 33);
+ 
+}
+
+</style>
+
+<nav class="navbar navbar-expand-md bg-body-light border-bottom sticky-top">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/listings"><i class="fa-brands fa-airbnb"></i> <h3>Airbnb</h3></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+ 
+      <div class="nav ms-auto nav-search ">
+        <form class="d-flex nav-search" role="search">
+          <input class="form-control me-2 search-input " type="search" id="input-search-btn" placeholder="Search home " aria-label="Search"/>
+          <button class="btn btn-outline search-input" type="submit" id="search-btn" ><i class="fa-solid fa-magnifying-glass"></i></button>
+        </form>
+      </div>
+  
+    <div class="nav ms-auto" id="navbarNav">
+         <li class="nav-item">
+          <a class="nav-link" href="/listings/new">Become a host</a>
+        </li>
+      <ul class="navbar-nav">
+       <% if(!currUser){ %> 
+        <li class="nav-item">
+          <a class="nav-link active"  href="/login">login</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/signup">signup</a>
+        </li>
+        <% }  else { %> 
+        <li class="nav-item">
+          <a class="nav-link" href="/logout">Logout</a>
+        </li>
+        <% } %>
+      </ul>
+    </div>
+  </div>
+</nav>

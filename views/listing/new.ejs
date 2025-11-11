@@ -1,0 +1,49 @@
+  <% layout("/layouts/boilerplate") %>
+<body>
+
+  <div class="col-8 offset-2">
+    <br>
+    <h3> Create New Listing</h3>
+    <form method="POST" action="/listings" enctype="multipart/form-data" >
+      <div class="row">
+          <label for="title" class="form-label">Title</label>
+          <input type="text" name="listing[title]" placeholder="title" class="form-control" required>
+          <div class="valid-feedback">looks good!</div>
+      </div>
+
+      <div class="row">
+          <label for="image" class="form-label">Image</label>
+          <input type="file" name="listing[image]" id="image" class="form-control">
+      </div>
+
+      <div class="row"> 
+          <label for="description" class="form-label">Description</label>
+          <textarea name="listing[description]" type="text" id="description" placeholder="Enter catchy description here!" class="form-control" ></textarea>
+          <div class="invalid-feedback">description should be valid</div>
+      </div>
+
+      <div class="row">
+        <div class="md-3 col-md-4 mb-3">
+            <label for="price" class="form-label">Price</label>
+            <input type="number" name="listing[price]" placeholder="2,000" class="form-control" required>
+            <div class="invalid-feedback">price should be valid</div>
+        </div>
+        <div class="md-3 col-md-8 ">
+            <label for="country" class="form-label">Country</label>
+            <input type="text" name="listing[country]" placeholder="India,Dubai" class="form-control" required >
+            <div class="invalid-feedback">country should should be valid </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <label for="location" class="form-label">Location</label>
+         <input type="text" name="listing[location]" placeholder="Jaipur,Bangalore" class="form-control" required>
+         <div class="invalid-feedback">location should be valid</div>
+      </div>
+
+       <br>
+      <button class="btn add-btn">ADD</button>
+      <br><br>
+    </form>
+  </div>
+</body>

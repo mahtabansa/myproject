@@ -1,0 +1,103 @@
+  <% layout("/layouts/boilerplate") %>
+  <script src="https://cdn.maptiler.com/maptiler-sdk-js/v2.0.3/maptiler-sdk.umd.js"></script>
+<script>
+    const listing =<%- JSON.stringify(elm) %>;
+
+</script>
+
+<div class="row allContent offset-2">
+  <div class="row col-8">
+    <h3><%= elm.title %></h3></div>
+  <div class="row">  
+        <div class="card listing-card" >
+              <img style="height:20rem" src="<%= elm.image.url %>" class="card-img-top-1 " alt="house-image">
+          <div class="card-body col-6">
+              <p><i>Ownyed by <%= elm.owner.username %></i></p>
+              <p><%= elm.description %></p>
+              <p><%= elm.country %></p>
+              <p><%= elm.location %></p>
+              <p class="card-text">&#8377;<%= elm.price.toLocaleString("en-IN")%>/night</p>
+          </div>
+        </div>
+  </div>
+   
+<% if(currUser && currUser._id.equals(elm.owner._id)) { %> 
+  <div class="allbtns">
+    <form 
+     method="GET" action="/listings/<%= elm._id %>/edit">
+     <button class="btn btn-dark col-1 edit-btn">Edit</button>
+      
+    </form>
+        <form  method="POST" action="/listings/<%= elm._id %>?_method=DELETE">
+          <button class= "btn btn-dark  delete-btn" >Delete</button>
+       </form>
+  </div>
+  <%  }  %> 
+</div>
+
+ <div class="col-8 offset-2" mg-bt-3>
+  <hr>
+     <% if(currUser) { %>
+    <h4>Leave Review</h4>
+   <form action="/listings/<%= elm.id %>/reviews" method="POST" class="needs-validation" novalidate >
+    <label for="rating" class="form-label">Rating</label>
+        <fieldset class="starability-slot">
+          <input type="radio" id="no-rate" class="input-no-rate" name="review[rating]" value="1" aria-label="No rating" />
+          <input type="radio" id="second-rate1" name ="review[rating]" value="1"  />
+          <label for="second-rate1" title="Terrible">1 star</label>
+          <input type="radio" id="second-rate2" name ="review[rating]" value="2" />
+          <label for="second-rate2" title="Not good">2 stars</label>
+          <input type="radio" id="second-rate3" name ="review[rating]" value="3" />
+          <label for="second-rate3" title="Average">3 stars</label>
+          <input type="radio" id="second-rate4" name ="review[rating]" value="4" />
+          <label for="second-rate4" title="Very good">4 stars</label>
+          <input type="radio" id="second-rate5" name ="review[rating]" value="5" />
+          <label for="second-rate5" title="Amazing">5 stars</label>
+        </fieldset>
+        <div class="mb-3 mt-3">
+            <label for="comment" class="form-label">Comment</label>
+            <textarea type ="text" name= "review[comment]" id="comment" rows="5" cols="30" class="form-control" required></textarea>
+            <div class="invalid-feedback">please submit valid comment</div>
+        </div>
+      <button class="btn btn-outline-dark mb-3" >Submit</button>
+   </form>
+
+   <% } %>
+     <hr>
+    <p><b>All Reviews</b></p>
+    <div class="row"> 
+     <% for(review of elm.reviews) { %> 
+          <div class="card col-5 mb-3 mt-1 ms-2 ">
+        
+            <h5 class="card-title"><i>@<%= review.author.username %></i></h5>
+            <p class="card-text"><%= review.comment  %></p>
+            <p class="starability-result card-text" data-rating="<%= review.rating %>"></p>
+
+         <div>
+          <form  method="POST" class="btn" action="/listings/<%= elm._id %>/reviews/<%= review._id %>?_method=DELETE" >
+            <button class="btn btn-sm btn-dark">Delete</button>
+          </form>
+        </div>
+          </div>
+      <% } %>
+      </div>
+       <hr>
+      <div class="row col-8 mb-3"> 
+       <h2> where will you be</h2>
+           <div id="map"></div>
+       </div>
+    </div>
+     <script src="/js/map.js"></script>
+
+     <script>
+        
+        const mapToken = '<%= mapToken %>';
+
+        initializeMap( mapToken);
+
+    </script>
+   
+
+    
+   
+  

@@ -1,0 +1,124 @@
+body{
+  font-family: "Roboto", sans-serif !important;
+  font-optical-sizing: auto;
+  display:flex;
+  flex-direction:column;
+  min-height:100vh;
+}
+.container {
+    flex:1;
+}
+.navbar {
+    background-color: white;
+}
+.fa-airbnb  {
+    color:rgb(255, 33, 33);
+    font-size:40px;
+}
+.container-fluid h3 {
+    display:inline-flex;
+    color:rgb(255, 33, 33);
+}
+.nav-link {
+        color:black !important;
+        font-weight: 900;
+}
+.footer {
+    border-top:1px solid rgb(206, 201, 201);
+    display: flex;
+    height: 8rem;
+    display:flex;
+    justify-content:space-between;
+    padding:1rem 2rem;
+}
+
+.footer .links a{
+     text-decoration:none;
+     color:black;
+}
+.footer .links a:hover{
+     text-decoration:1px rgb(125, 120, 120) underline;
+     
+     
+}
+
+.country {
+    display:flex;
+}
+.country-n-socials ,.copyright-n-links {
+    display:flex;
+    margin-right:0px;
+    gap:1rem;
+}
+
+.listing-card {
+    border:none !important; 
+}
+
+.card-img-top {
+    border-radius: 1rem !important;
+}
+.row {
+    padding-top:2rem !important;
+}
+
+.card-text p{
+    font-weight: 400;
+    
+}
+.card-text p:hover{
+    text-decoration:2px solid black underline;
+     
+}
+.card-body {
+    line-height:1;
+    padding:none !important;
+}
+.row a {
+    text-decoration: none !important; 
+}
+#overlay1 {
+    opacity:0;
+}
+#overlay1:hover {
+    opacity:0.2;
+    background-color: white;
+}
+#overlay2  i{
+    font-size:1rem;
+}
+.add-btn {
+    background-color:rgb(255, 33, 33) !important;
+    color: white !important;
+       
+}
+.card-img-top-1 {
+    display: flex;
+    border-radius:1rem;
+    width:40vw;
+   
+}
+.allbtns {
+    display:flex !important;
+    line-height:1 !important;
+    padding:1rem;
+    gap: 1rem;
+    padding-bottom: 2rem !important;
+}
+.edit-btn {
+    display:flex;
+    background-color: rgb(255, 33, 33) !important;
+    border:none !important;
+    width:3rem !important;
+}
+
+.allContent {
+    display: flex;
+    /* height:100vh !important; */
+    margin-top: none !important;
+
+}
+.allcards {
+    border:none !important;
+}
+#map { height: 300px; width: 100%; }

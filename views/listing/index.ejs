@@ -1,0 +1,123 @@
+  <% layout("/layouts/boilerplate") %>
+   <style>
+    .filters{
+      display: flex;
+      flex-wrap: wrap;
+      padding-top:1rem;
+    }
+    .filter {
+      text-align: center;
+      margin-left:2rem ;
+    }
+
+  
+    #switchCheckReverse1 {
+      /* padding: 1rem; */
+      margin-left: 20rem;
+      display: flex;
+      justify-items: center;
+      align-items: center;
+      
+    }
+    #switchBox {
+     
+       height:3rem;
+       border:1px solid black ;
+       border-radius:1rem;
+       padding: 1rem;
+       padding-right:4rem;
+       opacity: 0.7;
+       
+    }
+
+    .taxInfo {
+      display: none;
+    }
+ 
+   </style>
+
+
+ <div class="filters ">
+   <div class="filter">
+      <i class="fa-solid fa-people-roof"></i> 
+      <p>Rooms</p>
+   </div>
+    <div class="filter">
+      <i class="fa-solid fa-city"></i> 
+      <p>iconic cities</p>
+   </div>
+      <div class="filter">
+      <i class="fa-solid fa-mountain-city"></i>
+      <p>mountain-cities</p>
+   </div>
+
+    <div class="filter">
+      <i class="fa-solid fa-person-swimming"></i> 
+      <p>pools</p>
+   </div>
+
+    
+    <div class="filter">
+      <i class="fa-solid fa-cow"></i>
+      <p>farms</p>
+   </div>
+
+    <div class="filter">
+      <i class="fa-solid fa-campground"></i> 
+      <p>camping</p>
+   </div>
+    <div class="filter">
+       <i class="fa-brands fa-fort-awesome"></i> 
+      <p>castle</p>
+   </div>
+
+  <div id="switchCheckReverse1">
+    <div class="form-check form-switch form-check-reverse" id="switchBox">
+        <input class="form-check-input" type="checkbox"  id="switchCheckReverse">
+        <label class="form-check-label" for="switchCheckReverse" id="switchCheckReverse">Display after tax</label>
+    </div>
+  </div>
+
+ </div>
+
+ <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1">
+   <% for(let listing of listings) { %>
+
+   <a href="/listings/<%= listing._id %>">
+     <div class="card col allcards" >
+           <img style="height:20rem " src="<%= listing.image.url %>" class="card-img-top" alt="house-image">
+           <div class="card-img-overlay" id=overlay1 ></div>
+
+      <div class="card-body listing-card ">
+           <p class="card-text"><b><%= listing.owner.username %></b></p>
+           <p class="card-text"><b><%= listing.title %></b></p>
+           <p class="card-text">&#8377;<%= listing.price.toLocaleString("en-IN")%>/night <i class="taxInfo"> &nbsp; &nbsp;+ 18GST</i></p>
+
+       </div>
+   </div>
+   </a>
+  <% } %>
+ </div>
+
+ <script>
+      let myButton =  document.getElementById("switchCheckReverse");
+  
+      myButton.addEventListener('click', function() {
+
+      let taxInfo = document.getElementsByClassName("taxInfo");
+   
+      for(tax of taxInfo) {
+        if(tax.style.display != "inline") {
+           tax.style.display = "inline";
+        }  else {
+          tax.style.display = "none";
+        }
+        
+      }
+      });
+       
+   
+      
+
+   
+ </script>
