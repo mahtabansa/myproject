@@ -84,9 +84,6 @@ app.use(express.json())
         next();
      });
 
-    app.get("/",(req,res)=>{
-        res.send("server is working");
-        });
 
       app.get("/demouser",async (req,res)=>{
             let fakeuser = new User({
