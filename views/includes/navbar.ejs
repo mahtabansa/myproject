@@ -19,6 +19,7 @@
  
 }
 
+
 </style>
 
 <nav class="navbar navbar-expand-md bg-body-light border-bottom sticky-top">
@@ -56,3 +57,25 @@
     </div>
   </div>
 </nav>
+
+<script>
+ let newListing = document.querySelector("#navbarNav");
+  newListing.addEventListener(("click"), function(){
+    let navSearch = document.querySelector(".nav-search");
+     
+
+  });
+
+  let humburger = document.querySelector(".navbar-toggler");
+   humburger.addEventListener("click", function(){
+  
+    let navSearch = document.querySelector(".nav-search");
+      if(navSearch.style.display !== "none") {
+        navSearch.style.display="none"
+      } else {
+        navSearch.style.display="flex"
+      }
+   
+   });
+   
+</script>

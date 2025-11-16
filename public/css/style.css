@@ -23,33 +23,6 @@ body{
         color:black !important;
         font-weight: 900;
 }
-.footer {
-    border-top:1px solid rgb(206, 201, 201);
-    display: flex;
-    height: 8rem;
-    display:flex;
-    justify-content:space-between;
-    padding:1rem 2rem;
-}
-
-.footer .links a{
-     text-decoration:none;
-     color:black;
-}
-.footer .links a:hover{
-     text-decoration:1px rgb(125, 120, 120) underline;
-     
-     
-}
-
-.country {
-    display:flex;
-}
-.country-n-socials ,.copyright-n-links {
-    display:flex;
-    margin-right:0px;
-    gap:1rem;
-}
 
 .listing-card {
     border:none !important; 
@@ -122,3 +95,216 @@ body{
     border:none !important;
 }
 #map { height: 300px; width: 100%; }
+
+/* footer */ 
+.footer {
+    border-top:1px solid rgb(213, 210, 210);
+    display: flex;
+    height: 8rem;
+    display:flex;
+    justify-content:space-between;
+    align-items: center;
+    padding:1rem 2rem;
+    font-size: 14px;
+    color: #717171;
+    background-color: #fff; 
+}
+
+.footer .links a{
+     text-decoration:none;
+     color:black;
+}
+.footer .links a:hover{
+     text-decoration:1px rgb(125, 120, 120) underline;
+     
+     
+}
+
+
+.links  {
+    display: flex;
+    justify-self:end;
+    opacity: 0.8;
+}
+.socials {
+     gap:1.5rem;
+}
+.country {
+     display: flex;
+     justify-self:end;
+
+
+}
+@media (max-width:450px) {
+    .footer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height:auto
+
+    }
+    .copyright span{
+        line-height: 1;
+        width: 100%;
+        
+    }
+    .element {
+        padding-top:1rem;
+    }
+    
+}
+ 
+
+/* show ejs css   */
+
+
+  .title {
+    width: 100%;
+    padding-top:5rem;
+   
+  }
+  #map {
+    height:25rem;
+    width: 90%;
+    border-radius:2rem;
+  }
+  @media(max-width:425px){
+    .card-img-top-1{
+      height:2.1rem;
+      width:60vw;
+  
+    }
+    .listing-card{
+      border-color: 2px solid yellow;
+      offset: none !important;
+      
+      width: 75vw;
+       margin-right:5rem;
+       
+    }
+    #map{
+   
+      height:55vw;
+      width: 100vw;
+      offset:2;
+    }
+    .allreviews {
+     height:80%;
+     width:90%;
+     offset: none;
+    }
+    #comment {
+      width: 100%;
+    }
+    .listing-div  {
+  
+       offset: none !important;
+     
+    }
+  } 
+
+
+
+/* Index ejs css */
+
+    .filters{
+      display: flex;
+      flex-wrap: wrap;
+      padding-top:1rem;
+    }
+    .filter {
+      text-align: center;
+      margin-left:2rem ;
+    }
+
+
+  
+    #switchCheckReverse1 {
+      margin-left: 20rem;
+      display: flex;
+      justify-items: center;
+      align-items: center;
+      display: none;
+    }
+    #switchBox {
+       height:3rem;
+       border:1px solid black ;
+       border-radius:1rem;
+       padding: 1rem;
+       padding-right:4rem;
+       opacity: 0.7;
+    }
+
+    .taxInfo {
+      display: none;
+    }
+    .more {
+      margin-left: 1rem;
+      display: flex;
+     
+      cursor: pointer;
+    }
+    .more_filter {
+      background-color: rgb(243, 243, 243);
+      border: 1px solid black;
+      border-radius: 50%;
+      width: 2.5rem;
+      height: 2.5rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 1.5rem;
+      margin-left:10px;
+      
+    }
+    .more i {
+      font-size:1rem;
+    }
+    .more :hover{
+      opacity: 0.9;
+      
+    }
+
+   @media (max-width:425px) {
+    .more-icon {
+      display: none;
+     
+     }
+      #switchCheckReverse1 {
+      display: none;
+     }
+   }
+  
+   @media (min-width:425px) {
+     .more {
+      display: none;
+     }
+     #switchCheckReverse1 {
+      display:none;
+     }
+     .more-icon{
+      display: inline;
+     }
+   }
+
+   @media(min-width:768px){
+      #switchCheckReverse1 {
+      display: flex;
+      margin-left: auto;
+      }
+   
+      
+  
+   }
+   @media(max-width:1024px){
+      #switchCheckReverse1 {
+      display: flex;
+      margin-left:auto;
+     }
+     .more-icon{
+      display: none;
+     }
+
+   }
+  
