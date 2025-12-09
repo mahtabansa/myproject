@@ -23,7 +23,7 @@
   
   const popup = new maptilersdk.Popup()
   .setLngLat(listing.geometry.coordinates)
-  .setHTML( `<h4>${ listing.title } </h4> <br> exact location will be send after booking`)
+  .setHTML( `<span style="color:green">${ listing.title } </span> <br> exact location will be send after booking`)
   .setMaxWidth("200px")
   .addTo(map);
 
