@@ -1,31 +1,11 @@
-<style>
-  .nav-search  {
-    display: flex;
-    justify-content:center !important;
-  }
-  .search-input {
-    padding:0.5rem;
-    padding:0.5rem 2rem;
-    border-radius: 1.5rem;
-  }
-#input-search-btn {
-     padding:0rem 3rem;
-     
-}
-#search-btn{
-  border: 1px solid rgb(35, 32, 32) ;
-  color: white;
- background-color:rgb(255, 33, 33);
- 
-}
 
-
-</style>
 
 <nav class="navbar navbar-expand-md bg-body-light border-bottom sticky-top">
   <div class="container-fluid">
     <a class="navbar-brand" href="/listings"><i class="fa-brands fa-airbnb"></i> <h3>Airbnb</h3></a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
+    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
  
@@ -73,7 +53,7 @@
       if(navSearch.style.display !== "none") {
         navSearch.style.display="none"
       } else {
-        navSearch.style.display="flex"
+        navSearch.style.display="inline"
       }
    
    });

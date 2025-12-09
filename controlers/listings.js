@@ -55,10 +55,9 @@ module.exports.EditFormRender = async (req,res)=>{
 
  module.exports.updateListing =  async (req,res)=> {
         let { id } = req.params;
+        console.log("listing id",id);
         let listingData = req.body.listing;
-       
-       let Listing = await listing.findByIdAndUpdate(id,{listingData});
-
+       let Listing = await listing.findByIdAndUpdate(id,listingData);
        if(typeof req.file !== "undefined"){
         let url = req.file.path;
         let filename = req.file.filename;

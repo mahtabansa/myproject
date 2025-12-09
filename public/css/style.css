@@ -1,4 +1,271 @@
-body{
+/* body {
+  font-family: "Roboto", sans-serif !important;
+  font-optical-sizing: auto;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+.navbar {
+  background-color: white;
+}
+.fa-airbnb {
+  color: rgb(255, 33, 33);
+  font-size: 40px;
+}
+.container-fluid h3 {
+  display: inline-flex;
+  color: rgb(255, 33, 33);
+}
+.nav-link {
+  color: black !important;
+  font-weight: 900;
+}
+
+#overlay1 {
+  opacity: 0;
+}
+#overlay1:hover {
+  opacity: 0.2;
+  background-color: white;
+}
+#overlay2 i {
+  font-size: 1rem;
+}
+.add-btn {
+  background-color: rgb(255, 33, 33) !important;
+  color: white !important;
+}
+
+.allbtns {
+  display: flex !important;
+  line-height: 1 !important;
+  padding: 1rem;
+  gap: 1rem;
+  padding-bottom: 2rem !important;
+}
+.edit-btn {
+  display: flex;
+  background-color: rgb(255, 33, 33) !important;
+  border: none !important;
+  width: 3rem !important;
+}
+
+.allContent {
+  display: flex;
+  /* height:100vh !important; */
+  /* margin-top: none !important;
+}
+.allcards {
+  border: none !important;
+} */
+
+/* footer */
+/* .footer {
+  border-top: 1px solid rgb(213, 210, 210);
+  display: flex;
+  height: 8rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  font-size: 14px;
+  color: #717171;
+  background-color: #fff;
+}
+
+.footer .links a {
+  text-decoration: none;
+  color: black;
+}
+.footer .links a:hover {
+  text-decoration: 1px rgb(125, 120, 120) underline;
+}
+
+.links {
+  display: flex;
+  justify-self: end;
+  opacity: 0.8;
+}
+.socials {
+  gap: 1.5rem;
+}
+.country {
+  display: flex;
+  justify-self: end;
+}
+@media (max-width: 450px) {
+  .footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: auto;
+  }
+  .copyright span {
+    line-height: 1;
+    width: 100%;
+  }
+  .element {
+    padding-top: 1rem;
+  }
+
+  /* show ejs css   */
+/* 
+  .title {
+    width: 100%;
+    padding-top: 5rem;
+  }
+
+  #map {
+    height: 55vw;
+    width: 100vw;
+  }
+  #map {
+    height: 25rem;
+    width: 90%;
+    border-radius: 2rem;
+  }
+
+
+
+  .allreviews {
+    height: 80%;
+    width: 90%;
+    offset: none;
+  }
+  #comment {
+    width: 100%;
+  }
+} */ */
+
+/* Index ejs css */
+/* 
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  padding-top: 1rem;
+}
+.filter {
+  text-align: center;
+  margin-left: 2rem;
+}
+
+#switchCheckReverse1 {
+  margin-left: 20rem;
+  display: flex;
+  justify-items: center;
+  align-items: center;
+  display: none;
+}
+#switchBox {
+  height: 3rem;
+  border: 1px solid black;
+  border-radius: 1rem;
+  padding: 1rem;
+  padding-right: 4rem;
+  opacity: 0.7;
+}
+
+.taxInfo {
+  display: none;
+}
+.more {
+  margin-left: 1rem;
+  display: flex;
+
+  cursor: pointer;
+}
+.more_filter {
+  background-color: rgb(243, 243, 243);
+  border: 1px solid black;
+  border-radius: 50%;
+  width: 2.5rem;
+  height: 2.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+  margin-left: 10px;
+}
+.more i {
+  font-size: 1rem;
+}
+.more :hover {
+  opacity: 0.9;
+}
+
+@media (max-width: 425px) {
+  .more-icon {
+    display: none;
+  }
+  #switchCheckReverse1 {
+    display: none;
+  }
+}
+
+@media (min-width: 425px) {
+  .more {
+    display: none;
+  }
+  #switchCheckReverse1 {
+    display: none;
+  }
+  .more-icon {
+    display: inline;
+  }
+}
+
+@media (min-width: 768px) {
+  #switchCheckReverse1 {
+    display: flex;
+    margin-left: auto;
+  }
+}
+@media (max-width: 1024px) {
+  #switchCheckReverse1 {
+    display: flex;
+    margin-left: auto;
+  }
+  .more-icon {
+    display: none;
+  }
+}
+
+.nav-search {
+  display: flex;
+  justify-content: center !important;
+}
+.search-input {
+  padding: 0.5rem;
+  padding: 0.5rem 2rem;
+  border-radius: 1.5rem;
+}
+#input-search-btn {
+  padding: 0rem 3rem;
+}
+#search-btn {
+  border: 1px solid rgb(35, 32, 32);
+  color: white;
+  background-color: rgb(255, 33, 33);
+}
+
+
+  .card-conatainer p {
+    text-decoration: none;
+ 
+  }
+  .listing-card p b  {
+    font-weight: 400;
+    text-decoration:1px solid rgb(238, 237, 237) underline;
+    text-decoration: double;
+    
+} */
+   */
+
+
+
+
+   body{
   font-family: "Roboto", sans-serif !important;
   font-optical-sizing: auto;
   display:flex;
@@ -307,4 +574,3 @@ body{
      }
 
    }
-  

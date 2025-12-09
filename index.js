@@ -33,8 +33,6 @@ app.use(express.json())
     }
     connectToDB();
 
-   
-    
     const  store = MongoStore.create({
     mongoUrl:dbUrl,
     crypto: {
