@@ -116,18 +116,6 @@ body {
     padding-top: 5rem;
   }
 
-  #map {
-    height: 55vw;
-    width: 100vw;
-  }
-  #map {
-    height: 25rem;
-    width: 90%;
-    border-radius: 2rem;
-  }
-
-
-
   .allreviews {
     height: 80%;
     width: 90%;
