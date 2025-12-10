@@ -2,30 +2,14 @@
   <script>
     const listing =<%- JSON.stringify(elm) %>;
 </script>
-<style>
-    .img_listing {
-    height: 20rem;
-  }
 
-  #map {
-  
-    height: 20rem; 
-    border-radius: 1rem;
 
-  }
-    #map {
-    height: 25rem;
-    width: 90%;
-    border-radius: 2rem;
-  }
-</style>
-
-<div class="container flex justify-content-center align-items-center py-5">
-   <div class="col-12 col-sm-8 col-md-8 col-lg-8  pr-2">
+<div class="container flex justify-content-center align-items-center py-5 p-3 show_container">
+   <div class="col-12 col-sm-8 col-md-8 col-lg-8 comment_card  pr-2">
      <div class="row  ">
      
         
-        <div class="col-12 col-sm-8 col-md-8 col-lg-12 rounded
+        <div class="col-12 col-sm-8 col-md-8 col-lg-12 rounded 
        "  >
            <h1 class="py-5"><%= elm.title %></h1>
             <div class="col-sm-8 col-md-10 col-lg-10 mr-3" >
@@ -88,9 +72,9 @@
     </div>  
 
        <div class="container pb-5 ">
-          <div class="row g-4 "> 
+          <div class="row g-4"> 
             <% for(review of elm.reviews) { %> 
-                  <div class="col-8 col-sm-8 col-md-4 col-lg-4 ">
+                  <div class="col-8 col-sm-8 col-md-4 col-lg-4  comment_card">
                     <div class="card p-3 ">
                 
                       <h5 class="card-title fs-4 "><i>@<%= review.author.username %></i></h5>
@@ -110,7 +94,7 @@
         </div>   
 
           
-      <div class="col-12 col-sm-8 col-md-8 col-lg-12  my-md-2" >
+      <div class="col-12 col-sm-8 col-md-8 col-lg-12  my-md-2">
          <div id="map" ></div>  
       </div>
 

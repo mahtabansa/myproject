@@ -6,10 +6,8 @@
     const map = new maptilersdk.Map({
         container: 'map', // id of the div
              style: maptilersdk.MapStyle.STREETS, // map style
-        // style: `https://api.maptiler.com/maps/streets/style.json?key=${apiKey}`,
-
-        center: listing.geometry.coordinates, // [longitude, latitude]
-        zoom: 10,
+             center: listing.geometry.coordinates, // [longitude, latitude]
+             zoom: 10,
     });
 
     const marker = new maptilersdk.Marker({
