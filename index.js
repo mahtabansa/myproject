@@ -4,12 +4,9 @@ const app = express();
 const path = require("path");
 app.use(express.urlencoded({extended: true}));
 const mongoose = require("mongoose");
-const listing = require("./models/listing.js");
-const sampleData = require("./init/index.js"); 
 const methodOverride = require("method-override");
 const ejsMate = require("ejs-mate");
 const ExpressError = require("./ExpressError/ExpressError.js");
-const joi = require("joi");
 const Listing = require("./routes/listing.js");
 const review = require("./routes/review.js");
 const session = require("express-session");
@@ -20,6 +17,8 @@ const passport = require("passport");
 const LocalStrategy = require("passport-local");
 const User = require("./models/user.js");
 const userRoute = require("./routes/user.js");
+const listings = require('./models/listing.js');
+const { find_Hotels } = require('./controlers/listings.js');  
 app.use(express.json())
 
    const dbUrl = process.env.ATLAS_DBURL;
@@ -93,12 +92,12 @@ app.use(express.json())
         return res.send(newUser);
     });
      
+    app.get('/search', find_Hotels);
 
     app.use("/listings",Listing);
     app.use("/listings/:id/reviews", review);
     app.use("/",userRoute);
-
-
+    
     app.all(/.*/,(req,res,next)=>{
         next(new ExpressError(404,"page not found"));
     });
@@ -112,6 +111,7 @@ app.use(express.json())
         console.log("server is running on port 8080");
     });
 
+  
 
 
 

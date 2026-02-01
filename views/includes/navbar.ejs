@@ -1,5 +1,4 @@
 
-
 <nav class="navbar navbar-expand-md bg-body-light border-bottom sticky-top">
   <div class="container-fluid">
     <a class="navbar-brand" href="/listings"><i class="fa-brands fa-airbnb"></i> <h3>Airbnb</h3></a>
@@ -10,9 +9,10 @@
     </button>
  
       <div class="nav ms-auto nav-search ">
-        <form class="d-flex nav-search" role="search">
-          <input class="form-control me-2 search-input " type="search" id="input-search-btn" placeholder="Search home " aria-label="Search"/>
-          <button class="btn btn-outline search-input" type="submit" id="search-btn" ><i class="fa-solid fa-magnifying-glass"></i></button>
+        <form action="/search" class="d-flex nav-search" role="search" method="GET">
+          <input class="form-control me-2 search-input " type="text" id="search_hotel" name="search_hotel"
+          placeholder="Search home " aria-label="Search"/>
+          <button class="btn btn-outline search-input" type="submit" id="search-btn"  value="search"><i class="fa-solid fa-magnifying-glass"></i></button>
         </form>
       </div>
   
@@ -57,5 +57,6 @@
       }
    
    });
+
    
 </script>

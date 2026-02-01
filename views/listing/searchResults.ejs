@@ -1,0 +1,35 @@
+  <% layout("/layouts/boilerplate") %>
+
+  <h2 class="py-3">Hotels in <%= location %></h2>
+
+<% if(results.length === 0) { %>
+
+  <h3 class="text-center">No hotels found</h3>
+
+<% } else { %>
+
+  
+ <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1 card-container mt-3 mt-sm-3 mt-lg-3 ">
+   <% for(let listing of results) { %>
+
+     <a href="/listings/<%= listing._id %>">
+     <div class="card col allcards">
+           <img style="height:20rem " src="<%= listing.image.url %>" class="card-img-top border rounded  shadow-md " alt="house-image">
+           <div class="card-img-overlay" id=overlay1 >
+
+           </div>
+         
+      <div class="card-body listing-card ">
+           <p class="card-text "><b><%= listing.title %></b></p>
+           <p><b><%= listing.country %>,<%= listing.location %></b></p>
+           <p class="card-text"><%= listing.description %></p>
+           <p class="card-text"> Rent, &#8377;<%= listing.price.toLocaleString("en-IN")%>/night 
+            <i class="taxInfo"> &nbsp; &nbsp;+ 18GST</i></p>
+
+       </div>
+   </div>
+   </a>
+  <% } %>
+ </div>
+
+<% } %>

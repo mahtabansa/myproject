@@ -2,6 +2,7 @@
 const listing = require("../models/listing");
 const maptilerClient = require('@maptiler/client');
 require('dotenv').config();
+const listings = require("../models/listing.js");
 const apiKey = process.env.MAPTILER_API_KEY;
 maptilerClient.config.apiKey = apiKey;
 
@@ -95,3 +96,29 @@ module.exports.showRoute = async (req,res)=>{
          res.render("listing/show.ejs",{ elm });
          
       };
+
+ module.exports.find_Hotels = async (req, res) => {
+  try {
+    const search_hotels = req.query.search_hotel; 
+    const searchResults = await listings.find({
+      $or: [
+        { location: { $regex: search_hotels, $options: 'i' } },
+        { title: { $regex: search_hotels, $options: 'i' } },
+        {country:{$regex:search_hotels,$options:'i'}},
+      
+      ]
+    });
+
+  
+    res.render('./listing/searchResults.ejs', {
+      location: search_hotels,
+      results: searchResults,
+      query: search_hotels,
+    });
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({
+      error: 'Internal Server Error'
+    });
+  }
+}
